@@ -6,7 +6,7 @@
 * [Courses](#courses)
 * [Project](#project)
 
-## General info
+## General Info
 This repository is created to record and store my project when I study computer science. I am specialized in Data Science, so I use Python and R more often.
 The projects includes the project under the courses and my personal project.
 
