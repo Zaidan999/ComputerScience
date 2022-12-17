@@ -1,0 +1,22 @@
+#install.packages("ggplot2")
+#install.packages("forecast")
+#install.packages("tidyverse")
+#install.packages("dplyr")
+#install.packages("caret")
+#install.packages("caTools")
+library(readxl)
+ageandheight <- read_excel("R/ageandheight.xls", sheet="Hoja2")
+lmHeight=lm(height~age, data=ageandheight)
+summary(lmHeight)
+
+View(ageandheight)
+
+lmHeight2=lm(height~age+no_siblings, data=ageandheight)
+summary(lmHeight2)
+
+#library(readxl)
+pressure <- read_excel("R/pressure.xlsx")
+lmTemp=lm(Pressure~Temperature, data=pressure)
+plot(pressure,pch=16,col="blue")
+abline(lmTemp)
+View(pressure)
