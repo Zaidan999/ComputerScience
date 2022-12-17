@@ -4,7 +4,7 @@
 * [General info](#general-info)
 * [Computer languages used](#computer-languages-used)
 * [Courses](#courses)
-* [Project] (#project)
+* [Project](#project)
 
 ## General info
 This repository is created to record and store my project when I study computer science. I am specialized in Data Science, so I use Python and R more often.
