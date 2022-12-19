@@ -1,0 +1,211 @@
+CREATE TABLE Students
+(
+STU_ID int NOT NULL PRIMARY KEY,
+STU_LName varchar(50),
+STU_FName varchar(50),
+STU_Address varchar(255),
+STU_Phone int,
+STU_PrintBalance float
+)
+
+*Ctrl+S Create Student Table Query
+
+---------------------
+
+
+
+
+INSERT INTO Students VALUES (2, 'White', 'Daniel', '6 Indro Rd', 09387194, 30.25);
+
+*Edit the values in the same SQL and run to add new row
+
+*Ctrl+S Insert into Student Table Query
+
+---------------------
+
+ALTER TABLE Students
+ALTER COLUMN STU_Phone char(10)
+
+*Delete the space at the back of the value entered, and add 0 in front
+
+ALTER TABLE Students
+DROP COLUMN STU_PrintBalance
+
+*Ctrl+S Alter Table Students
+
+ALTER TABLE Students
+ADD COLUMN BirthDate date
+
+---------------------
+
+*Delete Students table
+*Import XML file
+
+SELECT *
+from Students
+
+SELECT LastName, FirstName
+from Students
+
+SELECT LastName, FirstName
+from Students
+where Gender='F'
+
+SELECT LastName, FirstName, BirthDate
+from Students
+where BirthDate<=#01-Feb-00#
+
+SELECT LastName, FirstName, BirthDate
+from Students
+where BirthDate>=#01-Jan-00#
+
+-----------------------------
+
+*Save Select Query 1
+*Copy paste and save as Select Query 2
+
+SELECT Gender, LastName, FirstName, BirthDate
+from Students
+where BirthDate>=#01-Jan-00#
+and Gender='F'
+
+SELECT Gender, LastName, FirstName, BirthDate
+from Students
+where BirthDate>=#01-Jan-00#
+or Gender='F'
+
+SELECT Gender, LastName, FirstName, BirthDate
+from Students
+where FirstName like 'B*'
+
+--------------------------------
+
+SELECT Gender, LastName, FirstName, BirthDate
+FROM Students
+WHERE FirstName like 'J*'
+AND BirthDate between #01-Jan-2000# and #01-Jan-2001#
+
+SELECT Gender, LastName, FirstName, BirthDate
+FROM Students
+WHERE FirstName like 'J*'
+AND BirthDate between #01-Jan-1999# and #01-Jan-2002#
+
+SELECT Gender, LastName, FirstName, BirthDate
+FROM Students
+WHERE FirstName NOT like 'J*'
+
+SELECT Gender, LastName, FirstName, BirthDate
+FROM Students
+WHERE FirstName NOT like 'J*'
+and NOT Gender='F'
+
+SELECT Gender, LastName, FirstName, BirthDate
+FROM Students
+WHERE (FirstName NOT like 'J*'
+and NOT Gender='F')
+OR
+FirstName IN ('Phoebe', 'Sarah', 'Brian')
+
+-----------------------------
+
+*Open new database (the lesson7 file)
+*Check Enrolment table - data cannot be redundant
+
+SELECT S_Id, FirstName, LastName
+FROM Students
+WHERE S_Id IN (
+SELECT Student_ID
+FROM Enrolment
+WHERE Subject_ID=1)
+
+SELECT Subject_ID
+FROM Subjects
+WHERE Subject_Teacher='Chan'
+
+
+SELECT S_Id, FirstName, LastName
+FROM Students
+WHERE S_Id IN (
+SELECT Student_ID
+FROM Enrolment
+WHERE Subject_ID IN (
+SELECT Subject_ID
+FROM Subjects
+WHERE Subject_Teacher='Chan'))
+
+--------------------------
+
+*Sorting
+
+SELECT LastName, FirstName
+FROM Students
+ORDER BY LastName
+
+SELECT LastName, FirstName
+FROM Students
+ORDER BY LastName asc
+
+SELECT LastName, FirstName
+FROM Students
+ORDER BY LastName desc
+
+SELECT LastName, FirstName
+FROM Students
+ORDER BY 1 desc
+
+SELECT LastName, FirstName
+FROM Students
+ORDER BY 2 desc
+
+SELECT LastName, FirstName
+FROM Students
+ORDER BY 2 asc
+
+SELECT Gender, LastName, FirstName
+FROM Students
+ORDER BY 1 asc, 2 desc
+
+--------------------
+
+*Arithmetical operators
+
+SELECT LastName, FirstName, BirthDate
+FROM Students
+
+SELECT LastName, FirstName, DATE()-BirthDate
+FROM Students
+
+SELECT LastName, FirstName, (DATE()-BirthDate)/365
+FROM Students
+
+SELECT LastName, FirstName, int((DATE()-BirthDate)/365)
+FROM Students
+
+SELECT LastName, FirstName, int((DATE()-BirthDate)/365) as Age
+FROM Students
+
+SELECT max((DATE()-BirthDate)/365) AS Age
+FROM Students
+
+SELECT LastName, FirstName, int((DATE()-BirthDate)/365) as Age
+FROM Students
+WHERE Age in (
+SELECT max((DATE()-BirthDate)/365) AS Age
+FROM Students
+)
+
+SELECT LastName, FirstName, int((DATE()-BirthDate)/365) as Age
+FROM Students
+WHERE int((DATE()-BirthDate)/365) in (
+SELECT max((DATE()-BirthDate)/365) AS Age
+FROM Students
+)
+
+--------------------
+
+*Group by
+
+SELECT Gender, count(*)
+FROM Students
+GROUP BY Gender
+
