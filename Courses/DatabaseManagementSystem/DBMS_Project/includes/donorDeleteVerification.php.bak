@@ -1,0 +1,32 @@
+<?php
+include_once 'dbconn.php';
+?>
+
+<html>
+<head>
+	<title>Delete Account</title>
+</head>
+<body>
+
+<?php
+	$dnrid = $_GET['donor_id'];
+	
+	$sql = "DELETE 
+			FROM donor
+			WHERE donor_id LIKE '$dnrid';";
+	$result = $conn->query($sql);
+	
+	if ($result->num_rows>0) {
+		while ($row = $result->fetch_assoc()) {
+			header("Location: ../adminMainMenu.php?donorDeleteVerification=success");
+		}
+	} else {
+		echo "Delete Unsuccesful!";
+	}
+?>
+
+<br>
+<br>
+<button onclick="window.location.href='http://localhost/DBMS_project/adminMainMenu.php';">Back to Main Menu</button>
+</body>
+</html>

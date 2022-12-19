@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Donation Report</title>
+</head>
+<body>
+
+<form action ="includes/generateDonationReport.php" method="GET">
+	<input type="int" name="donor_id" placeholder="Donor ID">
+	<br>
+	<button type="submit" name="submit">Generate</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Online Donation Form</title>
+  </head>
+  <p1>Welcome to Admin Headquarter!</p1>
+  <br>
+  <br>
+  <p2>Main Menu</p2>
+  <br>
+  <body>
+	<button onclick="window.location.href='http://localhost/DBMS_project/monthlyReport.php';">Generate Monthly Report</button> <br>
+	<button onclick="window.location.href='http://localhost/DBMS_project/viewDonorProfile.php';">Check Donor's Profile</button> <br>
+	<button onclick="window.location.href='http://localhost/DBMS_project/donationReport.php';">Generate Donor's Donation report</button> <br>
+	<button onclick="window.location.href='http://localhost/DBMS_project/adminRegistration.php';">Logout</button>
+	
+  </body>
+</html>

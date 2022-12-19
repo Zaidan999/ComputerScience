@@ -1,0 +1,26 @@
+<?php
+	include_once 'dbconn.php';
+	
+	$dnrid = $_GET['donor_id'];
+	$lastn = $_GET['donor_lastname'];
+	$firstn = $_GET['donor_firstname'];
+	$email = $_GET['donor_email'];
+	$phone = $_GET['donor_phone'];
+	
+	$sql = "SELECT *
+			FROM donor
+			WHERE donor_id LIKE '$dnrid';";
+	$result = $conn->query($sql);
+	
+	if ($result->num_rows>0) {
+		while ($row = $result->fetch_assoc()) {
+			$sql = "UPDATE donor
+			SET donor_lastname = '$lastn', donor_firstname = '$firstn', donor_email = '$email', donor_phone = $phone
+			WHERE donor_id = '$dnrid';";
+			mysqli_query($conn, $sql);
+	
+			header("Location: ../adminMainMenu.php?editDonorInfo=success");
+		}
+	} else {
+		echo "Wrong ID!";
+	}

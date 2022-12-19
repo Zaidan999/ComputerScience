@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Donor Signup</title>
+</head>
+<body>
+
+<form action ="includes/donorSignup.php" method="POST">
+	<input type="int" name="donor_id" placeholder="Donor ID">
+	<br>
+	<input type="varchar" name="donor_lastname" placeholder="Last Name">
+	<br>
+	<input type="varchar" name="donor_firstname" placeholder="First Name">
+	<br>
+	<input type="varchar" name="donor_email" placeholder="Email">
+	<br>
+	<input type="varchar" name="donor_phone" placeholder="Phone">
+	<br>
+	<button type="submit" name="submit">Sign up</button>
+</form>
+
+<br>
+<br>
+<button onclick="window.location.href='http://localhost/DBMS_project/adminMainMenu.php';">Back to Main Menu</button>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<?php
+include_once 'dbconn.php';
+?>
+
+<html>
+<head>
+	<title>View Donor Profile</title>
+</head>
+<body>
+
+<?php
+	$dnrid = $_GET['donor_id'];
+	
+	$sql = "SELECT *
+			FROM donor
+			WHERE donor_id LIKE '$dnrid';";
+	$result = $conn->query($sql);
+	
+	if ($result->num_rows>0) {
+		while ($row = $result->fetch_assoc()) {
+			echo "Donor ID: ".$row['donor_id']."<br>".
+				"Last Name: ".$row['donor_lastname']."<br>".
+				"First Name: ".$row['donor_firstname']."<br>".
+				"Email: ".$row['donor_email']."<br>".
+				"Phone: ".$row['donor_phone']."<br>";
+		}
+	} else {
+		echo "0 results";
+	}
+?>
+<br>
+<br>
+<button onclick="window.location.href='http://localhost/DBMS_project/editDonor.php';">Edit Donor Info</button><br>
+<button onclick="window.location.href='http://localhost/DBMS_project/deleteDonor.php';">Delete Donor</button><br>
+<button onclick="window.location.href='http://localhost/DBMS_project/adminMainMenu.php';">Back to Main Menu</button>
+
+</body>
+</html>

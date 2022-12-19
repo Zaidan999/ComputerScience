@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Payment Page</title>
+</head>
+<body>
+
+<form action ="includes/paymentPage.php" method="POST">
+	<input type="int" name="pay_code" placeholder="Payment Code">
+	<br>
+	<input type="int" name="donation_code" placeholder="Donation Code">
+	<br>
+	<input type="varchar" name="pay_method" placeholder="Payment Method">
+	<br>
+	<input type="decimal" name="pay_total" placeholder="Payment Total">
+	<br>
+	<button type="submit" name="submit">Submit</button>
+</form>
+
+</body>
+</html>
