@@ -1,4 +1,4 @@
-# Computer Science - Record of me as the Computer Science student
+# Computer Science - Record of me as a Computer Science student
 
 ## Table of Contents
 * [General info](#general-info)
