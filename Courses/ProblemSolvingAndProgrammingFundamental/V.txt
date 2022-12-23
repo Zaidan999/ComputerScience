@@ -1,0 +1,19 @@
+#include<stdio.h>
+int main(void)
+{
+//problem 1: Vocal and Consonant
+
+int vocal;
+printf("type any alphabet: ");
+scanf("%d", vocal);
+
+if (vocal == a,i,u,e,o){
+	printf("%d is a vocal alphabet \n", vocal);
+	}
+else {
+	printf("%d is a consonant alphabet", vocal);
+	}
+
+
+return 0;
+}
