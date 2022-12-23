@@ -18,6 +18,7 @@ The computer languages I used during my study are as follow:
 - SQL
 - PHP
 - C++
+- C
 - HTML
 - CSS
 - JavaScript
