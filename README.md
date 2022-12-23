@@ -33,6 +33,7 @@ This section includes the courses that is important for my personal development.
 - Natural Language Processing (NLP)
 - Object Oriented Programming (OOP)
 - Statistical Programming (SP)
+- Problem Solving and Fundamental Programming (PSFP)
 
 ## Project
 This section contains my personal project. I do this whenever I have free time. So, there'll be a project that is under process. This includes:
